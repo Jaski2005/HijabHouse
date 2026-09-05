@@ -1,0 +1,290 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+  color: var(--bs-secondary-color);
+  text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}
+/*HIJAB HOUSE - HOME DESIGN */
+
+.hero-section {
+  background: #f8f6f3;
+  padding: 30px 0;
+}
+
+.min-vh-75 {
+  min-height: 75vh;
+}
+
+.hero-section h1 {
+  font-size: 70px;
+  letter-spacing: -2px;
+}
+
+.hero-section .lead {
+  max-width: 570px;
+  line-height: 1.8;
+}
+
+.hero-image {
+  width: 100%;
+  height: 560px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-button {
+  padding: 14px 28px;
+  border-radius: 0;
+  transition: all 0.3s ease;
+}
+
+.hero-button:hover {
+  transform: translateY(-2px);
+}
+
+/* FEATURED PRODUCTS */
+
+.featured-section {
+  background: #ffffff;
+}
+
+.section-heading {
+  margin-bottom: 35px;
+}
+
+.section-heading h2 {
+  font-size: 38px;
+  font-weight: 600;
+}
+
+.section-label {
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.home-product-card {
+  background: #fff;
+  height: 100%;
+  border: 1px solid #eeeeee;
+  transition: all 0.3s ease;
+}
+
+.home-product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.dress-image {
+  height: 250px;
+  overflow: hidden;
+  background: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dress-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.home-product-card:hover .home-product-image img {
+  transform: scale(1.04);
+}
+
+.home-product-content {
+  padding: 25px;
+  text-align: center;
+}
+
+.home-product-card h5 {
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.home-product-content p {
+  color: #777;
+  margin-bottom: 18px;
+}
+
+.product-link {
+  color: #111;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.product-link:hover {
+  text-decoration: underline;
+}
+
+
+/* ABOUT SECTION */
+
+.about-section {
+  background: #f8f6f3;
+  margin-top: 30px;
+}
+
+.about-section h2 {
+  font-size: 38px;
+  font-weight: 600;
+}
+
+.about-section p.text-muted {
+  line-height: 1.9;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* HIJAB HOUSE NAVBAR */
+
+.hijab-navbar {
+  padding: 18px 35px;
+  background: #ffffff !important;
+}
+
+.hijab-logo {
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #111 !important;
+}
+
+.hijab-navbar .nav-link {
+  color: #222 !important;
+  font-size: 14px;
+  margin-left: 12px;
+  padding: 8px 12px !important;
+  transition: all 0.3s ease;
+}
+
+.hijab-navbar .nav-link:hover {
+  color: #777 !important;
+}
+
+.hijab-navbar .navbar-nav {
+  align-items: center;
+}
+
+/* DRESS COLLECTION */
+
+.dress-card {
+  overflow: hidden;
+  background: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dress-card-image {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08) !important;
+}
+
+.dress-card-image {
+  width: 100%;
+  height: 330px;
+  object-fit: contain;
+  background: #f7f5f2;
+  display: block;
+}
+
+.dress-card-body {
+  padding: 22px;
+}
+
+.dress-card-body .card-title {
+  font-size: 18px;
+}
+
+.dress-card-body .btn {
+  border-radius: 0;
+}
+
+/* DRESS DETAILS */
+
+.details-image {
+  width: 100%;
+  height: 600px;
+  background: #f7f5f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.details-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.dress-info p {
+  margin-bottom: 14px;
+  font-size: 16px;
+}
+
+.dress-info strong {
+  display: inline-block;
+  min-width: 90px;
+}
+
+/* CARD PAGE */
+
+.cart-item-card {
+  border-radius: 18px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cart-item-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08) !important;
+}
+
+.cart-summary {
+  border-radius: 18px;
+  position: sticky;
+  top: 20px;
+}
+
+.cart-summary .card-body {
+  padding: 28px;
+}

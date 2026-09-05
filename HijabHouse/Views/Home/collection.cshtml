@@ -1,0 +1,50 @@
+@model List<HijabHouse.Models.Dress>
+
+<div class="container py-5">
+
+    <div class="text-center mb-5">
+        <p class="text-uppercase small fw-bold">
+            Hijab House
+        </p>
+
+        <h1 class="display-5 fw-bold">
+            Koleksioni ynë
+        </h1>
+
+        <p class="text-muted">
+            Zbulo fustanet tona elegante dhe modeste.
+        </p>
+    </div>
+
+    <div class="row g-4">
+
+        @foreach (var dress in Model)
+        {
+                              <div class="col-md-4">
+
+            <div class="card h-100 shadow-sm">
+
+
+                <img src="@dress.ImageUrl"
+                     class="card-img-top"
+                     alt="@dress.Name" />
+
+                <div class="card-body text-center">
+                    <h5>@dress.Name</h5>
+                    <p class="text-muted">
+                        @dress.Description
+                    </p>
+                    <p class="fw-bold">@dress.Price €</p>
+
+                    <a asp-controller="Home" 
+                       asp-action="Details" 
+                       asp-route-id="@dress.Id"
+                       class="btn btn-dark">
+                        Shiko detajet
+                    </a>           
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>

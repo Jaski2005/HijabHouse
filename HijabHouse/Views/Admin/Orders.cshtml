@@ -1,0 +1,97 @@
+@model List<HijabHouse.Models.Order>
+
+@{
+    ViewData["Title"] = "Porosite";
+}
+
+<div class="container py-5">
+    <div class="text-center mb-5">
+        <p class="text-uppercase small fw-bold">
+            Hijab House
+        </p>
+
+        <h1 class="display-5 fw-bold">
+            Porosite
+        </h1>
+
+        <p class="text-muted">
+            Shiko porosite e bera nga klientet
+        </p>
+    </div>
+
+    @if (Model.Count == 0)
+    {
+        <div class="ext-center py-5">
+            <h4>Nuk ka ende porosi.</h4>
+            <p class="text-muted">
+                Porositë e reja do të shfaqen këtu.
+            </p>
+        </div>
+    }
+    else
+    {
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Klienti</th>
+                        <th>Produkti</th>
+                        <th>Email</th>
+                        <th>Telefon</th>
+                        <th>Adresa</th>
+                        <th>Qyteti</th>
+                        <th>Pagesa</th>
+                        <th>Totali</th>
+                        <th>Data</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+
+                    @foreach (var order in Model)
+                    {
+                        <tr>
+                            <td>@order.Id</td>
+
+                            <td>
+                                @order.FirstName @order.LastName
+                            </td>
+
+                            <td>
+                                @foreach (var item in order.OrderItems)
+                                {
+                                    <div>
+                                        <strong>@item.Dress.Name</strong>
+                                        <span class="text-muted"> x @item.Quantity</span>
+                                    </div>
+                                }
+                            </td>
+
+                            <td>@order.Email</td>
+                            
+                            <td>@order.Phone</td>
+
+                            <td>@order.Addresa</td>
+
+                            <td>@order.City</td>
+
+                            <td>@order.PaymentMethod</td>
+
+                            <td class="fw-bold">
+                                @order.Total €
+                            </td>
+
+                            <td>
+                                 @order.OrderDate.ToString("dd/MM/yyyy HH:mm")
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+
+            </table>
+        </div>
+    }
+
+</div>

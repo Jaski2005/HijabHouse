@@ -1,0 +1,101 @@
+@model IEnumerable<HijabHouse.Models.Dress>
+
+    @{
+        ViewData["Title"] = "Fustanet";
+    }
+
+    <div class="container py-5">
+
+        <div class="text-center mb-5">
+            <h1 class="fw-bold">Fustanet Hijab House</h1>
+            <p class="text-muted">
+                Zgjidh fustanin perfetkt per ty
+            </p>
+        </div>
+
+        <div class="row g-4">
+
+            @foreach (var dress in Model)
+            {
+                <div class="col-md-4 col-lg-3">
+
+                    <div class="card h-100 shadow-sm border-0">
+
+                        @if (!string.IsNullOrEmpty(dress.ImageUrl))
+                        {
+                            <img src="@dress.ImageUrl"
+                                 class="card-img-top"
+                                 alt="@dress.Name"
+                                 style="height: 350px; object-fit: cover;">
+                        }
+
+                        <div class="card-body dress-card-body">
+
+                            <h5 class="card-title fw-bold">
+                                @dress.Name
+                            </h5>
+
+                            <p class="text-muted mb-2">
+                                @dress.Color
+                            </p>
+
+                            <p class="small text-muted">
+                                @dress.Description
+                            </p>
+
+                            <p class="fw-bold fs-5 mb-3">
+                                 @dress.Price €
+                            </p>
+
+                            <a asp-controller="Dress"
+                               asp-action="Details"
+                               asp-route-id="@dress.Id"
+                               class="btn btn-outline-dark w-100 mb-2">
+                                🔎 Shiko detajet
+                            </a>
+
+                            <form asp-controller="Cart"
+                                  asp-action="Add"
+                                  method="post">
+
+                                  <input type="hidden"
+                                         name="dressId"
+                                         value="@dress.Id" />
+
+                                  <button type="submit"
+                                          class="btn btn-dark w-100">
+                                          🛒 Shto në shportë
+                                  </button>
+                            </form>
+
+                            @if (Context.Session.GetString("IsAdmin") == "True")
+                            {
+                                 <a asp-controller="Dress"
+                                    asp-action="Edit"
+                                    asp-route-id="@dress.Id"
+                                    class="btn btn-outline-dark w-100 mt-3">
+                                    Ndrysho
+                                 </a>
+
+                                 <form asp-controller="Dress"
+                                       asp-action="Delete"
+                                       method="post"
+                                       class=""mt-2">
+
+                                       <input type="hidden"
+                                              name="id"
+                                              value="@dress.Id" />
+                                              
+                                        <button type="submit"
+                                                class="btn btn-outline-danger w-100">
+                                                Fshi 
+                                        </button>
+                                 </form>
+
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>

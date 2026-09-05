@@ -1,0 +1,183 @@
+@model List<HijabHouse.Models.CartItem>
+
+@{
+    ViewData["Title"] = "Porosia";
+    decimal total = 0;
+    foreach (var item in Model)
+    {
+        total += item.Dress.Price * item.Quantity;
+    }
+}
+
+<div class="container py-5">
+    <div class="text-center mb-5">
+        <p class="text-uppercase small fw-bold">
+            HIjab House
+        </p>
+
+        <h1 class="display-5 fw-bold">
+            Përfundo porosinë
+        </h1>
+
+        <p class="text-muted">
+            Plotëso të dhënat për të përfunduar porosinë.
+        </p>
+    </div>
+
+    <div class="row g-4">
+
+        <!-- TE DHENAT E KLIENTIT -->
+        <div class="col-lg-7">
+            <div class="card shadow-sm">
+                <div class="card-body p-4">
+
+                    <h4 class="fw-bold mb-4">
+                        Të dhënat e klientit
+                    </h4>
+
+                    <div class="row">
+
+                        <form asp-controller="Checkout"
+                              asp-action="Confirm"
+                              method="post">
+                              <div class="col-md-6 mb-3">
+                                <label class="form-label">
+                                    Emri
+                                </label>
+
+                                <input type="text"
+                                       class="form-control"
+                                       name="FirstName"
+                                       placeholder="Shkruaj emrin"
+                                       required />
+                              </div>
+                              <div class="col-md-6 mb-3">
+                                <label class="form-label">
+                                     Mbiemri
+                                </label>
+
+                                <input type="text"
+                                       class="form-control"
+                                       name="LastName"
+                                       placeholder="Shkruaj mbiemrin"
+                                       required />
+                              </div>
+
+                              <div class="mb-3">
+                                <label class="form-label">
+                                    Email
+                                </label>
+
+                                <input type="email"
+                                       class="form-control"
+                                       name="Email"
+                                       placeholder="example@email.com"
+                                       required />
+                              </div>
+
+                              <div class="mb-3">
+                                <label class="form-label">
+                                    Telefon
+                                </label>
+
+                                <input type="text"
+                                       class="form-control"
+                                       name="Phone"
+                                       placeholder="+355..."
+                                       required />
+                              </div>
+
+                              <div class="mb-3">
+                                <label class="form-label">
+                                    Adresa
+                                </label>
+
+                                <input type="text"
+                                       class="form-control"
+                                       name="Addresa"
+                                       placeholder="Shkruaj adresën"
+                                       required />
+                              </div>
+
+                              <div class="mb-3">
+
+                                <label class="form-labe">
+                                    Qyteti
+                                </label>
+
+                                <input type="text"
+                                       class="orm-control"
+                                       name="City"
+                                       placeholder="Shkruaj qytetin"
+                                       required />
+                              </div>
+                              <h4 class="fw-bold mb-3">
+                                Menyra e pageses
+                              </h4>
+
+                              <select class="form-select mb-4"
+                                      name="PaymentMethod"
+                                      required>
+                                <option value="">Zgjidh mënyrën e pagesës</option>
+                                <option value="Cash">Pagesë në dorëzim</option>
+                                <option value="Card">Kartë bankare</option>
+                              </select>
+
+                              <button type="submit"
+                                      class="btn btn-dark w-100">
+                                      Konfirmo porosine
+                              </button>
+                        </form>
+                </div>
+            </div>
+                
+        </div>
+
+        <-- PERMBLEDJA -->
+        <div class="col-lg-5">
+
+            <div class="card shadow-sm">
+
+                <div class="card-body p-4">
+
+                    <h4 class="fw-bold mb-4">
+                        Permbledhja porosise
+                    </h4>
+
+                    @foreach (var item in Model)
+                    {
+                        <div class="d-flex justify-content-between mb-3">
+
+                            <div>
+                                <strong>
+                                    @item.Dress.Name
+                                </strong>
+
+                                <div class="text-muted">
+                                    Sasia: @item.Quantity
+                                </div>
+                            </div>
+
+                            <span class="fw-bold">
+                                @(item.Dress.Price * item.Quantity) €
+                            </span>
+                        </div>
+                    }
+
+                    <hr />
+
+                    <div class="d-flex justify-content-between">
+
+                        <span class="fw-bold">
+                            Totali
+                        </span>
+
+                        <span class="fw-bold">
+                            @total €
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

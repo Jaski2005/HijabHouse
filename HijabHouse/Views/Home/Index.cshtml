@@ -1,0 +1,105 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="hero-section">
+    <div class="container">
+        <div class="row align-items-center min-vh-75">
+            <div class="col-lg-6">
+                <p class="text-uppercase small fw-bold">Elegancë • Modesti • Stil</p>
+
+                <h1 class="display-3 fw-bold">
+                    Hijab House
+                </h1>
+
+                <p class="lead my-4">
+                    Zbulo koleksionin tonë të fustaneve elegante dhe modeste,
+                    të krijuara për vajzat që duan të kombinojnë modestinë me stilin.
+                </p>
+
+                <a asp-controller="Dress"
+                asp-action="Index"
+                class="btn btn-dark btn-lg px-4">
+                Shiko koleksionin
+                </a>
+            </div>
+
+
+            <div class="col-lg-6 text-center mt-4 mt-lg-0">
+                <div class="hero-image">
+                    <img src="~/images/fustani1.jpg"
+                         alt="Hijab House Collection" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container py-5">
+    <div class="text-center mb-5">
+        <h2>Koleksioni Hijab House</h2>
+        <p class="text-muted">
+            Fustane elegante për çdo moment.
+        </p>
+    </div>
+
+    <div class="row g-4">
+
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="dress-image">
+                    <img src="~/images/fustani1.jpg"
+                         alt="Fustan Elegant" />
+                </div>
+
+                <div class="card-body text-center">
+                    <h5 class="card-title">Fustan Elegant</h5>
+                    <p class="card-text text-muted">
+                        Dizajn modest dhe elegant.
+                    </p>
+                    <a href="#" class="btn btn-outline-dark">
+                        Shiko më shumë
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="dress-image">
+                    <img src="~/images/fustani2.jpg"
+                         alt="Fustan Evening" />
+                </div>
+
+                <div class="card-body text-center">
+                    <h5 class="card-title">Fustan Evening</h5>
+                    <p class="card-text text-muted">
+                        Elegancë për evente speciale.
+                    </p>
+                    <a href="#" class="btn btn-outline-dark">
+                        Shiko më shumë
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="dress-image">
+                    <img src="~/images/fustani3.jpg"
+                         alt="Fustan Minimal" />
+                </div>
+
+                <div class="card-body text-center">
+                    <h5 class="card-title">Fustan Minimal</h5>
+                    <p class="card-text text-muted">
+                        Stil i thjeshtë dhe modern.
+                    </p>
+                    <a href="#" class="btn btn-outline-dark">
+                        Shiko më shumë
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

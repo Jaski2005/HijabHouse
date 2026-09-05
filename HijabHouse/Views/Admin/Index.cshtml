@@ -1,0 +1,76 @@
+@{
+    ViewData["Title"] = "Admin Panel";
+}
+
+<div class="container py-5">
+
+    <div class="text-center mb-5">
+        <p class="text-uppercase small fw-bold">
+            Hijab House
+        </p>
+
+        <h1 class="display-5 fw-bold">
+            Admin Panel
+        </h1>
+
+        <p class="text-muted">
+            Menaxho fustanet dhe porositë.
+        </p>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+
+        <div class="col-md-5">
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-body text-center p-4">
+
+                    <h3 class="fw-bold">
+                        👗 Fustanet
+                    </h3>
+
+                    <h2 class="display-6 fw-bold my-3">
+                        @ViewBag.DressCount
+                    </h2>
+
+                    <p class="text-muted">
+                        Fustane në koleksion
+                    </p>
+
+                    <a asp-controller="Dress"
+                       asp-action="Create"
+                       class="btn btn-outline-dark w-100 mt-2">
+                        ➕ Shto fustan
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-5">
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-body text-center p-4">
+
+                    <h3 class="fw-bold">
+                        🧾 Porositë
+                    </h3>
+
+                    <h2 class="display-6 fw-bold my-3">
+                        @ViewBag.OrderCount
+                    </h2>
+
+                    <p class="text-muted">
+                        Porosi të regjistruara
+                    </p>
+
+                    <a asp-controller="Admin"
+                       asp-action="Orders"
+                       class="btn btn-dark w-100">
+                        Shiko porosite
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+</div>

@@ -1,0 +1,101 @@
+@model HijabHouse.Models.Dress
+
+@{
+    ViewData["Title"] = "Shto fustan";
+}
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-7">
+
+            <div class="card shadow-sm border-0">
+
+                <div class="card-body p-4">
+
+                    <div class="text-center mb-4">
+                        <h2 class="fw-bold">Shto Fustan</h2>
+                        
+                        <p class="text-muted">
+                            Shto te dhenat e fustanit te ri
+                        </p>
+                    </div>
+
+                    <form asp-controller="Dress"
+                          asp-action="Create"
+                          method="post">
+
+                          <div class="mb-3">
+                            <label class="form-label">Emri i fustanit</label>
+                             
+                            <input asp-for="Name"
+                                   class="form-control"
+                                   placeholder="p.sh. Fustan Elegant"
+                                   required>
+                          </div>
+
+                          <div class="mb-3">
+                            <label class="form-label">Cmimi</label>
+
+                            <input asp-for="Price"
+                                   type="number"
+                                   step="0.01"
+                                   class="form-control"
+                                   placeholder="p.sh. 49.99"
+                                   required>
+                          </div>
+
+                          <div class="mb-3">
+                            <label class="form-label">Pershkrimi</label>
+
+                            <textarea asp-for="Description"
+                                      class="form-control"
+                                      rows="4"
+                                      placeholder="Pershkrimi i fustanit..."
+                                      required></textarea>
+                          </div>
+
+                          <div class="mb-3">
+                            <label class="form-label">Materiali</label>
+
+                            <input asp-for="Material"
+                                   class="form-control"
+                                   placeholder="p.sh. Cotton">
+                          </div>
+
+                          <div class="mb-3">
+                            <label class="form-label">Ngjyra</label>
+
+                            <input asp-for="Color"
+                                   class="form-control"
+                                   placeholder="p.sh. E zezë" />
+                          </div>
+
+                          <div class="mb-3">
+                            <label class="form-label">Fotoja</label>
+
+                            <input asp-for="ImageUrl"
+                                   class="form-control"
+                                   placeholder="/images/fustan1.jpg" />
+
+                            <small class="text-muted">
+                                Shkruaj adresen e fotos, p.sh.
+                                /images/fustan1.jpg
+                            </small>
+                          </div>
+
+                          <div class="d-grid mt-4">
+
+                            <button type="submit"
+                                    class="btn btn-dark btn-lg">
+                                    Shto fustanin
+                             </button>
+
+                          </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

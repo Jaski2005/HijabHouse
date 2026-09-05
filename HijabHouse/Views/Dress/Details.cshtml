@@ -1,0 +1,75 @@
+@model HijabHouse.Models.Dress
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container py-5">
+
+    <div class="row align-items-center">
+
+        <div class="col-md-6 mb-4">
+            <div class="details-image">
+                <img src="@Model.ImageUrl"
+                     alt="@Model.Name" />
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+
+        <p class="text-uppercase small fw-bold">
+             HijabHouse Collection
+        </p>
+
+        <h1 class="display-5 fw-bold">
+            @Model.Name
+        </h1>
+
+        <h3 class="my-3">
+             @Model.Price €
+        </h3>
+
+        <p class="text-muted">
+            @Model.Description
+        </p>
+
+        <hr>
+
+        <p>
+            <strong>Materiali:</strong> @Model.Material
+        </p>
+
+        <p>
+            <strong>Masat:</strong> @Model.Sizes
+        </p>
+
+        <p>
+            <strong>Njyrat:</strong> @Model.Color
+        </p>
+
+        <div class="mt-4">
+
+           <a asp-controller="Dress"
+              asp-action="Index"
+              class="btn btn-dark">
+                    Kthehu te koleksioni
+          </a>
+
+          <form asp-controller="cart"
+                asp-action="Add"
+                method="post"
+                class="mt-2">
+
+                <input type="hidden"
+                       name="dressId"
+                       value="@Model.Id" />
+
+                <button type="submit"
+                        class="btn btn-dark">
+                        🛒 Shto në shportë
+                </button>
+            </form>
+        </div>           
+    </div>
+</div>
